@@ -1,0 +1,79 @@
+/*!
+ * Start Bootstrap - 4 Col Portfolio HTML Template (http://startbootstrap.com)
+ * Code licensed under the Apache License v2.0.
+ * For details, see http://www.apache.org/licenses/LICENSE-2.0.
+ */
+
+body {
+    padding-top: 70px; /* Required padding for .navbar-fixed-top. Remove if using .navbar-static-top. Change if height of navigation changes. */
+    direction: rtl;
+    min-width: 397px;
+}
+
+/**
+ * RTL header navigation
+ */
+.navbar-toggle {
+    margin-left: 15px;
+}
+
+.navbar-nav {
+    padding: 0;
+}
+
+/**
+ * default size
+ */
+.portfolio-item {
+    max-width: 320px;
+    margin: 0 auto 30px auto;
+}
+
+/**
+ * center block on sm to md screens
+ */
+@media all and (min-width: 768px) and (max-width: 991px) {
+	.row {
+	    max-width: 700px;
+	}
+}
+
+/**
+ * center modal
+ */
+.modal-custom {
+    min-width: 397px;
+    margin-right: auto;
+    margin-left: auto;
+    max-width: 640px;
+}
+
+@media (min-width: 992px) {
+    .modal-custom .modal-content {
+        width: 642px;
+    }
+
+    .modal, .modal-open {
+       padding-right: 0 !important;
+    }
+}
+
+@media all and (min-width: 768px) and (max-width: 991px) {
+    .row {
+        max-width: 700px;
+    }
+
+    .modal-custom .modal-content {
+        margin-right: 10px;
+    }
+}
+
+@media all and (max-width: 767px) {
+    .modal, .modal-open {
+        padding-right: 0 !important;
+    }
+}
+
+footer {
+    margin: 50px 0;
+}
