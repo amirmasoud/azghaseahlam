@@ -9,13 +9,15 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>4 Col Portfolio - Start Bootstrap Template</title>
+    <title>
+    @if (Route::is('home'))
+        AzghaseAhlam - Welcome
+    @else
+        @yield('title') - AzghseAhlam
+    @endif
+    </title>
 
-    <!-- Bootstrap Core CSS -->
-    <link href="css/bootstrap.min.css" rel="stylesheet">
-
-    <!-- Custom CSS -->
-    <link href="css/portfolio.css" rel="stylesheet">
+    <link rel="stylesheet" href="{{ elixir('css/all.css') }}">
 
     <!--[if lt IE 9]>
         <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
