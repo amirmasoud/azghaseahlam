@@ -17,12 +17,12 @@ class InstagramProfile extends Model
 	];
 
     /**
-     * An Instagram Profile can have many Photos.
+     * An Instagram Profile can have many images.
      * 
      * @return HasMany
      */
-    public function photos()
+    public function images()
     {
-        return $this->hasMany('App\Photos', 'instagram_profile_token', 'token');
+        return $this->hasMany('App\Image', 'instagram_profile_token', 'token');
     }
 }
