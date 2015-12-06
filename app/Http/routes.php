@@ -11,6 +11,4 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+get('/', ['uses' => 'ThemeController@home', 'as' => 'home']);
