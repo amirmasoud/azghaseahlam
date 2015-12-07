@@ -17,7 +17,7 @@ class CreateImagesTable extends Migration
             $table->string('link');
             $table->string('low_resolution');
             $table->string('thumbnail');
-            $table->string('high_resolution');
+            $table->string('standard_resolution');
             $table->text('caption_text');
             $table->unsignedInteger('token')->unique();
             $table->unsignedInteger('instagram_profile_token');
