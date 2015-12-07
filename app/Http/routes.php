@@ -11,6 +11,6 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+get('/', ['uses' => 'ThemeController@home', 'as' => 'home']);
+get('/about', ['uses' => 'ThemeController@about', 'as' => 'about']);
+get('/contact', ['uses' => 'ThemeController@contact', 'as' => 'contact']);
