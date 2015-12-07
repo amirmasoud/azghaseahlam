@@ -19,9 +19,13 @@ elixir(function(mix) {
 
     mix.scripts([
     	'jquery.js',
-    	'bootstrap.js',
+        'angular.min.js',
+        'bootstrap.js',
         'portfolio.js',
-        'modal.js'
+        'modal.js',
+        'services/imageService.js',
+        'controllers/mainCtrl.js',
+        'app.js',
     ]);
 
     mix.version(['css/all.css', 'js/all.js']);
