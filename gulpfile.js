@@ -20,7 +20,8 @@ elixir(function(mix) {
     mix.scripts([
     	'jquery.js',
     	'bootstrap.js',
-        'portfolio.js'
+        'portfolio.js',
+        'modal.js'
     ]);
 
     mix.version(['css/all.css', 'js/all.js']);

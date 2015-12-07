@@ -4,76 +4,13 @@
 	
 <!-- Projects Row -->
 <div class="row">
+    @foreach ($images as $image)
     <div class="col-md-3 col-sm-6 portfolio-item">
-        <a href="#" data-toggle="modal" data-target=".photo-modal-lg">
-            <img class="img-responsive" src="http://placehold.it/320x320" alt="">
+        <a href="#" data-toggle="modal" data-target=".photo-modal-lg" data-standard-resolution="{{ $image->standard_resolution }}" data-caption-text="{{ $image->caption_text }}" data-link="{{ $image->link }}">
+            <img class="img-responsive" src="{{ $image->low_resolution }}" alt="">
         </a>
     </div>
-    <div class="col-md-3 col-sm-6 portfolio-item">
-        <a href="#" data-toggle="modal" data-target=".photo-modal-lg">
-            <img class="img-responsive" src="http://placehold.it/320x320" alt="">
-        </a>
-    </div>
-    <div class="col-md-3 col-sm-6 portfolio-item">
-        <a href="#" data-toggle="modal" data-target=".photo-modal-lg">
-            <img class="img-responsive" src="http://placehold.it/320x320" alt="">
-        </a>
-    </div>
-    <div class="col-md-3 col-sm-6 portfolio-item">
-        <a href="#" data-toggle="modal" data-target=".photo-modal-lg">
-            <img class="img-responsive" src="http://placehold.it/320x320" alt="">
-        </a>
-    </div>
-</div>
-<!-- /.row -->
-
-<!-- Projects Row -->
-<div class="row">
-    <div class="col-md-3 col-sm-6 portfolio-item">
-        <a href="#" data-toggle="modal" data-target=".photo-modal-lg">
-            <img class="img-responsive" src="http://placehold.it/320x320" alt="">
-        </a>
-    </div>
-    <div class="col-md-3 col-sm-6 portfolio-item">
-        <a href="#" data-toggle="modal" data-target=".photo-modal-lg">
-            <img class="img-responsive" src="http://placehold.it/320x320" alt="">
-        </a>
-    </div>
-    <div class="col-md-3 col-sm-6 portfolio-item">
-        <a href="#" data-toggle="modal" data-target=".photo-modal-lg">
-            <img class="img-responsive" src="http://placehold.it/320x320" alt="">
-        </a>
-    </div>
-    <div class="col-md-3 col-sm-6 portfolio-item">
-        <a href="#" data-toggle="modal" data-target=".photo-modal-lg">
-            <img class="img-responsive" src="http://placehold.it/320x320" alt="">
-        </a>
-    </div>
-</div>
-<!-- /.row -->
-
-<!-- Projects Row -->
-<div class="row">
-    <div class="col-md-3 col-sm-6 portfolio-item">
-        <a href="#" data-toggle="modal" data-target=".photo-modal-lg">
-            <img class="img-responsive" src="http://placehold.it/320x320" alt="">
-        </a>
-    </div>
-    <div class="col-md-3 col-sm-6 portfolio-item">
-        <a href="#" data-toggle="modal" data-target=".photo-modal-lg">
-            <img class="img-responsive" src="http://placehold.it/320x320" alt="">
-        </a>
-    </div>
-    <div class="col-md-3 col-sm-6 portfolio-item">
-        <a href="#" data-toggle="modal" data-target=".photo-modal-lg">
-            <img class="img-responsive" src="http://placehold.it/320x320" alt="">
-        </a>
-    </div>
-    <div class="col-md-3 col-sm-6 portfolio-item">
-        <a href="#" data-toggle="modal" data-target=".photo-modal-lg">
-            <img class="img-responsive" src="http://placehold.it/320x320" alt="">
-        </a>
-    </div>
+    @endforeach
 </div>
 <!-- /.row -->
 

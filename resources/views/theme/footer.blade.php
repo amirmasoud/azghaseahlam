@@ -15,7 +15,7 @@
         <div class="modal fade photo-modal-lg" tabindex="-1" role="dialog">
             <div class="modal-custom">
                 <div class="modal-content">
-                    <img class="img-responsive" src="http://placehold.it/640x640" alt="">
+                    <img class="img-responsive standard-resolution" alt="">
                     <div class="modal-footer">
                         <div class="row">
                             <a href="#">
@@ -24,7 +24,7 @@
                                 </div>
                             </a>
                             <div class="col-xs-10">
-                            <p>text</p>
+                                <p class="caption-text"></p>
                             </div>
                             <a href="#">
                                 <div class="col-xs-1">

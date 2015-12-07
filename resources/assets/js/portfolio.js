@@ -1,4 +1,4 @@
-(function ($) {
+/*(function ($) {
     "use strict";
     function centerModal() {
         $(this).css('display', 'block');
@@ -17,4 +17,4 @@
     });
 
 
-}(jQuery));
+}(jQuery));*/
