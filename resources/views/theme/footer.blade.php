@@ -18,7 +18,13 @@
                     <img class="img-responsive standard-resolution" alt="">
                     <div class="modal-footer">
                         <div class="row">
-                            <a href="#">
+                            <a href="#" 
+                                class="next-image"
+                                data-toggle="modal" 
+                                data-target=".photo-modal-lg" 
+                                data-standard-resolution="" 
+                                data-caption-text="" 
+                                data-link="">
                                 <div class="col-xs-1">
                                     <i class="glyphicon glyphicon-menu-left"></i>
                                 </div>
@@ -26,7 +32,13 @@
                             <div class="col-xs-10">
                                 <p class="caption-text"></p>
                             </div>
-                            <a href="#">
+                            <a href="#"
+                                class="prev-image"
+                                data-toggle="modal" 
+                                data-target=".photo-modal-lg" 
+                                data-standard-resolution="" 
+                                data-caption-text="" 
+                                data-link="">
                                 <div class="col-xs-1">
                                     <i class="glyphicon glyphicon-menu-right"></i>
                                 </div>
