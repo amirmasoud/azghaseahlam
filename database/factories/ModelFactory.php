@@ -26,7 +26,7 @@ $factory->define(App\Image::class, function (Faker\Generator $faker) {
 		'link' => $faker->url,
 		'low_resolution' => $faker->imageUrl($width = 320, $height = 320),
 		'thumbnail' => $faker->imageUrl($width = 150, $height = 150),
-		'high_resolution' => $faker->imageUrl($width = 640, $height = 640),
+		'standard_resolution' => $faker->imageUrl($width = 640, $height = 640),
 		'caption_text' => $faker->realText($maxNbChars = 100),
 		'token' => $i++,
 		'instagram_profile_token' => '1',
