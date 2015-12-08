@@ -7,6 +7,11 @@ angular.module('imageService', [])
             return $http.get('/api/images', {
             	params: { page: page }
             });
+        },
+        singular : function(id) {
+            return $http.get('/api/images/' + id, {
+            	params: { id: id }
+            });
         }
     }
 });

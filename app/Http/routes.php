@@ -23,4 +23,5 @@ get('/', function() {
 
 Route::group(['prefix' => 'api'], function() {
 	get('/images', 'Api\ImagesController@get');
+	get('/images/{id}', 'Api\ImagesController@singular');
 });

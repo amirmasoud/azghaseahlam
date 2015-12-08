@@ -21,7 +21,6 @@ elixir(function(mix) {
     	'jquery.js',
         'angular.min.js',
         'bootstrap.js',
-        'modal.js',
         'ng-route.min.js',
         'ng-infinite-scroll.min.js',
         'services/imageService.js',
