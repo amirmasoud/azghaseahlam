@@ -8302,6 +8302,8 @@ body {
   direction: rtl;
   min-width: 397px;
   font-family: 'B Yekan', tahoma, Arial;
+  background: url(../img/bg.png) no-repeat no-repeat fixed right 30px #FFF;
+  background-size: contain;
 }
 
 /**
