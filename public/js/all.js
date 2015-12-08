@@ -2787,7 +2787,7 @@ angular.module('mainCtrl', [])
 	        });
 	}
 });
-var imageApp = angular.module('imageApp', ['mainCtrl', 'imageService', 'ngAnimate', 'infinite-scroll', 'angular-loading-bar'], function($interpolateProvider) {
+var imageApp = angular.module('imageApp', ['mainCtrl', 'imageService', 'infinite-scroll', 'angular-loading-bar'], function($interpolateProvider) {
 	$interpolateProvider.startSymbol('<<');
 	$interpolateProvider.endSymbol('>>');
 })

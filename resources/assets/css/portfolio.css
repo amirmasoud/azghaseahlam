@@ -3,11 +3,13 @@
  * Code licensed under the Apache License v2.0.
  * For details, see http://www.apache.org/licenses/LICENSE-2.0.
  */
+@import url(http://awebfont.ir/css?id=1116);
 
 body {
     padding-top: 70px; /* Required padding for .navbar-fixed-top. Remove if using .navbar-static-top. Change if height of navigation changes. */
     direction: rtl;
     min-width: 397px;
+    font-family: 'B Yekan', tahoma, Arial;
 }
 
 /**
@@ -116,4 +118,11 @@ footer {
     transform: rotateX(0deg) translatez(30px);
     opacity: 1;
     height: 30px;
+}
+
+/**
+ * modal
+ */
+.next-image, .prev-image {
+    cursor: pointer;
 }

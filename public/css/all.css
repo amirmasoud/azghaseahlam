@@ -1,3 +1,4 @@
+@import url(http://awebfont.ir/css?id=1116);
 /*!
  * Bootstrap v3.3.6 (http://getbootstrap.com)
  * Copyright 2011-2015 Twitter, Inc.
@@ -8300,6 +8301,7 @@ body {
   /* Required padding for .navbar-fixed-top. Remove if using .navbar-static-top. Change if height of navigation changes. */
   direction: rtl;
   min-width: 397px;
+  font-family: 'B Yekan', tahoma, Arial;
 }
 
 /**
@@ -8416,6 +8418,15 @@ footer {
   transform: rotateX(0deg) translatez(30px);
   opacity: 1;
   height: 30px;
+}
+
+/**
+ * modal
+ */
+
+.next-image,
+.prev-image {
+  cursor: pointer;
 }
 #loading-bar,
 #loading-bar-spinner {
