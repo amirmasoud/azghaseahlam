@@ -11,6 +11,16 @@
 |
 */
 
-get('/', ['uses' => 'ThemeController@home', 'as' => 'home']);
+/*get('/', ['uses' => 'ThemeController@home', 'as' => 'home']);
 get('/about', ['uses' => 'ThemeController@about', 'as' => 'about']);
 get('/contact', ['uses' => 'ThemeController@contact', 'as' => 'contact']);
+*/
+
+
+get('/', function() {   
+    return view('angular');
+});
+
+Route::group(['prefix' => 'api'], function() {
+	get('/images', 'Api\ImagesController@get');
+});

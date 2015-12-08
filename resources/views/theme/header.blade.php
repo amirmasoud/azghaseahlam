@@ -31,7 +31,7 @@
     <!-- Navigation -->
     <nav class="navbar navbar-fixed-top" role="navigation">
         <div class="container">
-            <a class="navbar-brand navbar-right pull-right" href="{{ route('home') }}">اضغاث احلام</a>
+            <a class="navbar-brand navbar-right pull-right" href="">اضغاث احلام</a>
             <div class="navbar-header">
                 <button type="button" class="navbar-toggle pull-left" data-toggle="collapse" data-target="#main-navbar-collapse">
                     <span class="sr-only">Toggle navigation</span>
@@ -42,8 +42,8 @@
             </div>
             <div class="collapse navbar-collapse" id="main-navbar-collapse">
               <ul class="nav navbar-nav">
-                <li class="active"><a href="{{ route('about') }}">درباره</a></li>
-                <li><a href="{{ route('contact') }}">تماس</a></li>
+                <li class="active"><a href="">درباره</a></li>
+                <li><a href="">تماس</a></li>
               </ul>
             </div>
             <!-- /.navbar-collapse -->
