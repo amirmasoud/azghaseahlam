@@ -3,11 +3,15 @@
  * Code licensed under the Apache License v2.0.
  * For details, see http://www.apache.org/licenses/LICENSE-2.0.
  */
+@import url(http://awebfont.ir/css?id=1116);
 
 body {
     padding-top: 70px; /* Required padding for .navbar-fixed-top. Remove if using .navbar-static-top. Change if height of navigation changes. */
     direction: rtl;
     min-width: 397px;
+    font-family: 'B Yekan', tahoma, Arial;
+    background: url(../img/bg.png) no-repeat no-repeat fixed right 30px #FFF;
+    background-size: contain;
 }
 
 /**
@@ -21,7 +25,9 @@ body {
     padding: 0;
 }
 nav.navbar {
-    background-color: #fff;
+    background-color: #F7F7F7;
+    border-bottom: 1px solid #DDD;
+    box-shadow: 0 0 25px 1px #BCBCBC;
 }
 
 /**
@@ -116,4 +122,22 @@ footer {
     transform: rotateX(0deg) translatez(30px);
     opacity: 1;
     height: 30px;
+}
+
+/**
+ * modal
+ */
+.next-image, .prev-image {
+    cursor: pointer;
+    color: #29D;
+}
+
+.next-image:hover, .prev-image:hover,
+.next-image:focus, .prev-image:focus {
+    color: #3FB9FF;
+}
+
+span.disabled {
+    cursor: not-allowed;
+    color: #DDD;
 }

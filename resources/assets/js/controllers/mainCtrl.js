@@ -20,9 +20,11 @@ angular.module('mainCtrl', [])
 	};
 
 	$scope.openImage = function(id) {
-    	Image.singular(id)
-	        .then(function(result) {
-	        	$scope.singular = result['data'];
-	        });
+		if (id) {
+			return Image.singular(id)
+				.then(function(result) {
+					$scope.singular = result['data'];
+				});
+		}
 	}
 });

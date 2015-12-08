@@ -2781,13 +2781,15 @@ angular.module('mainCtrl', [])
 	};
 
 	$scope.openImage = function(id) {
-    	Image.singular(id)
-	        .then(function(result) {
-	        	$scope.singular = result['data'];
-	        });
+		if (id) {
+			return Image.singular(id)
+				.then(function(result) {
+					$scope.singular = result['data'];
+				});
+		}
 	}
 });
-var imageApp = angular.module('imageApp', ['mainCtrl', 'imageService', 'ngAnimate', 'infinite-scroll', 'angular-loading-bar'], function($interpolateProvider) {
+var imageApp = angular.module('imageApp', ['mainCtrl', 'imageService', 'infinite-scroll', 'angular-loading-bar'], function($interpolateProvider) {
 	$interpolateProvider.startSymbol('<<');
 	$interpolateProvider.endSymbol('>>');
 })
