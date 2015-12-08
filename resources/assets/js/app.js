@@ -3,4 +3,4 @@ var imageApp = angular.module('imageApp', ['mainCtrl', 'imageService', 'infinite
 	$interpolateProvider.endSymbol('>>');
 });
 
-angular.module('infinite-scroll').value('THROTTLE_MILLISECONDS', 250);
+//angular.module('infinite-scroll').value('THROTTLE_MILLISECONDS', 250);

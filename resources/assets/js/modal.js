@@ -7,4 +7,4 @@ $('.photo-modal-lg').on('show.bs.modal', function (event) {
 
 	modal.find('img.standard-resolution').attr('src', standardResolution);
 	modal.find('.caption-text').text(captionText + "<br />" + link);
-})
+});
