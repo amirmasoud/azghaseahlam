@@ -4,7 +4,7 @@
         <footer>
             <div class="row">
                 <div class="col-lg-12 text-center">
-                    <p>Copyright &copy; Your Website 2014</p>
+                    <p>تمام حقوق سایت متعلق به اضغاث احلام است. 1394 &copy;</p>
                 </div>
             </div>
             <!-- /.row -->
