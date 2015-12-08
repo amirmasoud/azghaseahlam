@@ -20,6 +20,9 @@ body {
 .navbar-nav {
     padding: 0;
 }
+nav.navbar {
+    background-color: #fff;
+}
 
 /**
  * default size
