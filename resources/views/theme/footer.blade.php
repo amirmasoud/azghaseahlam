@@ -18,7 +18,7 @@
                     <img class="img-responsive standard-resolution" alt="" ng-src="<< singular.standard_resolution >>">
                     <div class="modal-footer">
                         <div class="row">
-                            <span class="next-image" ng-class="{disabled: singular.next}" ng-click="openImage(singular.next)">
+                            <span class="next-image" ng-class="{disabled: !singular.next}" ng-click="openImage(singular.next)">
                                 <div class="col-xs-1">
                                     <i class="glyphicon glyphicon-menu-left"></i>
                                 </div>
@@ -26,7 +26,7 @@
                             <div class="col-xs-10">
                                 <p class="caption-text"><< singular.caption_text >></p>
                             </div>
-                            <span class="prev-image" ng-class="{disabled: singular.prev}" ng-click="openImage(singular.prev)">
+                            <span class="prev-image" ng-class="{disabled: !singular.prev}" ng-click="openImage(singular.prev)">
                                 <div class="col-xs-1">
                                     <i class="glyphicon glyphicon-menu-right"></i>
                                 </div>
