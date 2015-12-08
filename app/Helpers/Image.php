@@ -30,4 +30,17 @@ class Image implements ImageContract
         return $images;
     }
 
+    /**
+     * Get an image based on id
+     * @param  integer  $id image id
+     * @return JSON
+     */
+    public function singular($id)
+    {
+        $image = ImageModel::select('id', 'standard_resolution', 'low_resolution', 'caption_text', 'link')
+                            ->where('id', '=', $id)
+                            ->firstOrFail();
+
+        return $image;
+    }
 }

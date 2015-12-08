@@ -14,4 +14,9 @@ class ImagesController extends Controller
     {
     	return $images->get();
     }
+
+    public function singular(ImageContract $image, $id)
+    {
+    	return $image->singular($id);
+    }
 }
