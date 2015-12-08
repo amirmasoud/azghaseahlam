@@ -2662,16 +2662,6 @@ if (typeof jQuery === 'undefined') {
 
 }(jQuery);
 
-$('.photo-modal-lg').on('show.bs.modal', function (event) {
-	var image = $(event.relatedTarget),
-		standardResolution = image.data('standard-resolution'),
-		captionText = image.data('caption-text'),
-		link = image.data('link'),
-		modal = $(this);
-
-	modal.find('img.standard-resolution').attr('src', standardResolution);
-	modal.find('.caption-text').text(captionText + "<br />" + link);
-});
 /*
  AngularJS v1.4.8
  (c) 2010-2015 Google, Inc. http://angularjs.org
@@ -2697,6 +2687,11 @@ angular.module('imageService', [])
             return $http.get('/api/images', {
             	params: { page: page }
             });
+        },
+        singular : function(id) {
+            return $http.get('/api/images/' + id, {
+            	params: { id: id }
+            });
         }
     }
 });
@@ -2705,6 +2700,7 @@ angular.module('mainCtrl', [])
 .controller('mainController', function($scope, $http, Image) {
     $scope.loading = true;
     $scope.images = [];
+    $scope.singular = [];
     var page = 1;
 
     function getImages() {
@@ -2719,6 +2715,13 @@ angular.module('mainCtrl', [])
 	$scope.loadMore = function() {
 		return getImages();
 	};
+
+	$scope.openImage = function(id) {
+    	Image.singular(id)
+	        .then(function(result) {
+	        	$scope.singular = result['data'];
+	        });
+	}
 });
 var imageApp = angular.module('imageApp', ['mainCtrl', 'imageService', 'infinite-scroll'], function($interpolateProvider) {
 	$interpolateProvider.startSymbol('<<');
