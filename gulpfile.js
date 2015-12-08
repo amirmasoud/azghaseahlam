@@ -14,13 +14,16 @@ var elixir = require('laravel-elixir');
 elixir(function(mix) {
     mix.styles([
         'bootstrap.css',
-        'portfolio.css'
+        'portfolio.css',
+        'loading-bar.min.css'
     ]);
 
     mix.scripts([
     	'jquery.js',
         'angular.min.js',
         'bootstrap.js',
+        'ng-animate.min.js',
+        'ng-loading-bar.min.js',
         'ng-route.min.js',
         'ng-infinite-scroll.min.js',
         'services/imageService.js',
