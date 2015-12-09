@@ -15,7 +15,7 @@ class Image extends Model
 		'link',
 		'low_resolution',
         'thumbnail',
-		'high_resolution',
+		'standard_resolution',
 		'caption_text',
 		'token'
 	];

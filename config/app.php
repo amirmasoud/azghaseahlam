@@ -145,7 +145,7 @@ return [
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
         Cviebrock\EloquentSluggable\SluggableServiceProvider::class,
-        //Frozennode\Administrator\AdministratorServiceProvider::class,
+        Frozennode\Administrator\AdministratorServiceProvider::class,
         Barryvdh\Debugbar\ServiceProvider::class,
         Illuminate\Html\HtmlServiceProvider::class,
         App\Providers\ImageServiceProvider::class,
