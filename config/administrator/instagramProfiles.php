@@ -43,6 +43,24 @@ return array(
 		),
 	),
 
+
+	'actions' => array(
+	    'fetch_data' => array(
+	        'title' => 'Fetch Data',
+	        'messages' => array(
+	            'active' => 'Fetching images...',
+	            'success' => 'All images fetched.',
+	            'error' => 'Error, check laravel.log in storage directory for more details and be sure not running this action twice or more.',
+	        ),
+	        'action' => function(&$model)
+	        {
+	            Event::fire(new \App\Events\InstagramProfileCreated($model));
+
+	            return true;
+	        }
+	    ),
+	),
+
 	/**
 	 * The filterable fields
 	 *
