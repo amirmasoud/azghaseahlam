@@ -15,7 +15,7 @@ class CreateInstagramProfilesTable extends Migration
         Schema::create('instagram_profiles', function (Blueprint $table) {
             $table->increments('id');
             $table->string('name');
-            $table->unsignedInteger('token')->unique();
+            $table->unsignedInteger('profile_id')->unique();
             $table->timestamps();
         });
     }

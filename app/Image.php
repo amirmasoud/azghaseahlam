@@ -15,9 +15,11 @@ class Image extends Model
 		'link',
 		'low_resolution',
         'thumbnail',
-		'high_resolution',
+		'standard_resolution',
 		'caption_text',
-		'token'
+		'profile_id',
+		'image_id',
+		'created_time'
 	];
 
 	/**
@@ -27,7 +29,7 @@ class Image extends Model
 	 */
 	public function instagramProfile()
 	{
-		return $this->belongsTo('App\InstagramProfile', 'token', 'instagram_profile_token');
+		return $this->belongsTo('App\InstagramProfile', 'profile_id', 'profile_id');
 	}
 
     /**
