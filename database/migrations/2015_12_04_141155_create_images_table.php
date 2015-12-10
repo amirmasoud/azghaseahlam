@@ -19,9 +19,11 @@ class CreateImagesTable extends Migration
             $table->string('thumbnail');
             $table->string('standard_resolution');
             $table->text('caption_text');
-            $table->unsignedInteger('token')->unique();
-            $table->unsignedInteger('instagram_profile_token');
-            $table->foreign('instagram_profile_token')->references('token')->on('instagram_profiles');
+            $table->enum('state', ['show', 'hide', 'new'])->default('new');
+            $table->string('image_id')->unique();
+            $table->timestamp('created_time');
+            $table->unsignedInteger('profile_id');
+            $table->foreign('profile_id')->references('profile_id')->on('instagram_profiles');
             $table->timestamps();
         });
     }

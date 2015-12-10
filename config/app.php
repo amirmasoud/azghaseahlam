@@ -149,6 +149,7 @@ return [
         Barryvdh\Debugbar\ServiceProvider::class,
         Illuminate\Html\HtmlServiceProvider::class,
         App\Providers\ImageServiceProvider::class,
+        App\Providers\InstagramServiceProvider::class,
 
     ],
 

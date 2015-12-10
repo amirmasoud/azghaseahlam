@@ -13,7 +13,7 @@ class InstagramProfileTableSeeder extends Seeder
     {
         DB::table('instagram_profiles')->insert([
             'name' => 'Test profile',
-            'token' => '1',
+            'profile_id' => '1',
         ]);
     }
 }

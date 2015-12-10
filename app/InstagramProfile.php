@@ -13,7 +13,7 @@ class InstagramProfile extends Model
 	 */
 	protected $fillable = [
 		'name',
-		'token',
+		'profile_id',
 	];
 
     /**
@@ -23,6 +23,6 @@ class InstagramProfile extends Model
      */
     public function images()
     {
-        return $this->hasMany('App\Image', 'instagram_profile_token', 'token');
+        return $this->hasMany('App\Image', 'profile_id', 'profile_id');
     }
 }

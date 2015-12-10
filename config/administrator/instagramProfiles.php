@@ -15,7 +15,7 @@ return array(
 		'name' => array(
 			'title' => 'Name',
 		),
-		'token' => array(
+		'profile_id' => array(
 			'title' => 'Profile ID',
 		),
 		'created_at' => array(
@@ -36,7 +36,7 @@ return array(
 			'type' 	=> 'text',
 			'limit' => 255,
 		),
-		'token' => array(
+		'profile_id' => array(
 			'title' => 'Profile ID',
 			'type' 	=> 'text',
 			'limit' => 255,
