@@ -171,6 +171,6 @@ class Instagram implements InstagramContract
         // Profile name
         $profileName = InstagramProfile::whereProfileId($profileId)->firstOrFail()->name;
 
-        return PHP_EOL . $imagesCount . ' image(s) inserted for ' . $profileId . ' -> ' . $profileName . PHP_EOL;
+        return [$profileId, $imagesCount, $profileName];
     }
 }

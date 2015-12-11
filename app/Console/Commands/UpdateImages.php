@@ -30,6 +30,20 @@ class UpdateImages extends Command
     protected $instagram;
 
     /**
+     * comments to print to the user about end result of updating command
+     * 
+     * @var  array
+     */
+    private $comments;
+
+    /**
+     * End result table headers
+     * 
+     * @var  array
+     */
+    private $headers;
+
+    /**
      * Create a new command instance.
      *
      * @return void
@@ -38,6 +52,8 @@ class UpdateImages extends Command
     {
         parent::__construct();
 
+        $this->headers   = ['Profile ID', 'Image inserted', 'Profile Name'];
+        $this->comments  = [];
         $this->instagram = $instagram;
     }
 
@@ -56,11 +72,14 @@ class UpdateImages extends Command
         if ($this->argument('profile_id') == '') {
             $instagramProfiles = InstagramProfile::all();
             foreach ($instagramProfiles as $instagram) {
-                $this->update($instagram->profile_id);
+               $this->update($instagram->profile_id);
             }
         } else {
             $this->update($this->argument('profile_id'));
         }
+
+        // Print the result in table format
+        $this->table($this->headers, $this->comments);
     }
 
     /**
@@ -74,6 +93,6 @@ class UpdateImages extends Command
     private function update($profile_id)
     {
         $userRecentMediaURL = $this->instagram->userRecentMediaURL($profile_id);
-        $this->comment($this->instagram->update( $userRecentMediaURL, $profile_id ));
+        $this->comments[]   = $this->instagram->update( $userRecentMediaURL, $profile_id );
     }
 }
