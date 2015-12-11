@@ -12,18 +12,6 @@ return array(
 	 * The display columns
 	 */
 	'columns' => array(
-		'link' => array(
-			'title' => 'Link',
-		),
-		'low_resolution' => array(
-			'title' => 'Low Resolution',
-		),
-		'standard_resolution' => array(
-			'title' => 'Standard Resolution',
-		),
-		'caption_text' => array(
-			'title' 		=> 'Caption Text',
-		),
 		'thumbnail' => array(
 			'title' 	=> 'Thumbnail',
 			'output' 	=> function($thumbnail) {
@@ -32,12 +20,24 @@ return array(
 				},
 			'sortable' => false,
 		),
+		'caption_text' => array(
+			'title' 		=> 'Caption Text',
+		),
+		'standard_resolution' => array(
+			'title' => 'Standard Resolution',
+		),
+		'link' => array(
+			'title' => 'Link',
+		),
+		'low_resolution' => array(
+			'title' => 'Low Resolution',
+		),
 		'created_at' => array(
 			'title' 		=> 'Created at',
 		),
 		'updated_at' => array(
 			'title' 		=> 'Updated at',
-		)
+		),
 	),
 
 	/**
