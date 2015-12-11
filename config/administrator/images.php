@@ -23,26 +23,11 @@ return array(
 		'caption_text' => array(
 			'title' 		=> 'Caption Text',
 		),
-		'standard_resolution' => array(
-			'title' => 'Standard Resolution',
-		),
-		'link' => array(
-			'title' => 'Link',
-		),
 		'state' => array(
-			'title' => 'State',
+			'title' => 'State'
 		),
 		'created_time' => array(
 			'title' 		=> 'Created time',
-		),
-		'low_resolution' => array(
-			'title' => 'Low Resolution',
-		),
-		'created_at' => array(
-			'title' 		=> 'Created at',
-		),
-		'updated_at' => array(
-			'title' 		=> 'Updated at',
 		),
 	),
 
@@ -51,6 +36,19 @@ return array(
 	 */
 	'edit_fields' => array(
 		'id',
+		'caption_text' => array(
+		    'title' => 'Caption Text',
+		    'type' 	=> 'wysiwyg',
+		),
+		'state' => array(
+		    'type' => 'enum',
+		    'title' => 'State',
+		    'options' => array(
+		        'new' 	=> 'New',
+		        'hide' 	=> 'Hide',
+		        'show' 	=> 'Show',
+		    ),
+		),
 		'link' => array(
 			'title' => 'Title',
 			'type' 	=> 'text',
@@ -71,10 +69,10 @@ return array(
 			'type' 	=> 'text',
 			'limit' => 255,
 		),
-		'caption_text' => array(
-		    'title' => 'Caption Text',
-		    'type' 	=> 'wysiwyg',
-		)
+		'created_time' => array(
+			'title' => 'Created time',
+			'type'  => 'datetime',
+		),
 	),
 
 	/**
