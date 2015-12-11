@@ -80,32 +80,24 @@ return array(
 	 *
 	 * @type array
 	 */
-/*	'filters' => array(
-	    'title' => array(
-	        'title' => 'Name',
+	'filters' => array(
+	    'caption_text' => array(
+	        'title' => 'Caption Text',
 	    ),
-	    'subtitle' => array(
-	        'title' => 'Subtitle',
-	        'type' 	=> 'text',
+	    'state' => array(
+	        'title' => 'State',
+	        'type' 	=> 'enum',
+		    'options' => array(
+		        'new' 	=> 'New',
+		        'hide' 	=> 'Hide',
+		        'show' 	=> 'Show',
+		    ),
 	    ),
-	    'user' => array(
-	        'title' 	 => 'Author',
-	        'type' 		 => 'relationship',
-	        'name_field' => 'name',
+	    'created_time' => array(
+	        'title' 	 => 'Created Time',
+	        'type' 		 => 'datetime',
 	    ),
-	    'body' => array(
-	        'title' => 'Body',
-	        'type' 	=> 'text',
-	    ),
-	    'created_at' => array(
-	    	'title' => 'Created at',
-	    	'type'	=> 'date',
-	    ),
-	    'updated_at' => array(
-	    	'title' => 'Updated at',
-	    	'type'	=> 'date',
-	    )
-	),*/
+	),
 
 	'form_width' => 600
 );
