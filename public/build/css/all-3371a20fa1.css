@@ -8445,6 +8445,42 @@ span.disabled {
   cursor: not-allowed;
   color: #DDD;
 }
+
+/**
+ * home page image background before loading
+ */
+
+.portfolio-item img {
+  background-color: #DDD;
+}
+
+@media (max-width:767px) {
+  .portfolio-item img {
+    width: 290px;
+    height: 290px;
+  }
+}
+
+@media (min-width:768px) {
+  .portfolio-item img {
+    width: 290px;
+    height: 290px;
+  }
+}
+
+@media (min-width:992px) {
+  .portfolio-item img {
+    width: 212.5px;
+    height: 212.5px;
+  }
+}
+
+@media (min-width:1200px) {
+  .portfolio-item img {
+    width: 262.5px;
+    height: 262.5px;
+  }
+}
 #loading-bar,
 #loading-bar-spinner {
   pointer-events: none;
