@@ -19,7 +19,8 @@ class Image extends Model
 		'caption_text',
 		'profile_id',
 		'image_id',
-		'created_time'
+		'created_time',
+		'state',
 	];
 
 	/**

@@ -29,6 +29,12 @@ return array(
 		'link' => array(
 			'title' => 'Link',
 		),
+		'state' => array(
+			'title' => 'State',
+		),
+		'created_time' => array(
+			'title' 		=> 'Created time',
+		),
 		'low_resolution' => array(
 			'title' => 'Low Resolution',
 		),
