@@ -1,8 +1,5 @@
 <?php
 
-/**
- * Actors model config
- */
 return array(
 	'title'  => 'Images',
 	'single' => 'Image',
@@ -21,10 +18,15 @@ return array(
 			'sortable' => false,
 		),
 		'caption_text' => array(
-			'title' 		=> 'Caption Text',
+			'title' => 'Caption Text',
 		),
 		'state' => array(
 			'title' => 'State'
+		),
+		'owner' => array(
+			'title' 		=> 'Owner',
+			'relationship' 	=> 'instagramProfile',
+			'select' 		=> "(:table).name",
 		),
 		'created_time' => array(
 			'title' 		=> 'Created time',
@@ -49,6 +51,11 @@ return array(
 		        'show' 	=> 'Show',
 		    ),
 		),
+/*		'instagramProfile' => array(
+			'type' 		 => 'relationship',
+			'title' 	 => 'Owner',
+			'name_field' => 'name',
+		),*/
 		'link' => array(
 			'title' => 'Title',
 			'type' 	=> 'text',
@@ -93,11 +100,15 @@ return array(
 		        'show' 	=> 'Show',
 		    ),
 	    ),
+/*		'instagramProfile' => array(
+			'title' 	 => 'Owner',
+			'type' 		 => 'relationship',
+			'name_field' => 'name',
+		),*/
 	    'created_time' => array(
 	        'title' 	 => 'Created Time',
 	        'type' 		 => 'datetime',
 	    ),
 	),
-
 	'form_width' => 600
 );
