@@ -20,7 +20,7 @@
                         <div class="row">
                             <span class="next-image" ng-class="{disabled: !singular.next}" ng-click="openImage(singular.next)">
                                 <div class="col-xs-1">
-                                    <i class="glyphicon glyphicon-menu-left"></i>
+                                    <i ng-class="loadingImage ? 'glyphicon-repeat' : 'glyphicon-menu-left'" class="glyphicon"></i>
                                 </div>
                             </span>
                             <div class="col-xs-10">
@@ -28,7 +28,7 @@
                             </div>
                             <span class="prev-image" ng-class="{disabled: !singular.prev}" ng-click="openImage(singular.prev)">
                                 <div class="col-xs-1">
-                                    <i class="glyphicon glyphicon-menu-right"></i>
+                                    <i ng-class="loadingImage ? 'glyphicon-repeat' : 'glyphicon-menu-right'" class="glyphicon"></i>
                                 </div>
                             </span>
                         </div>

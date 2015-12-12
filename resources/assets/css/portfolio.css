@@ -150,7 +150,7 @@ span.disabled {
 /**
  * home page image background before loading
  */
-.portfolio-item img {
+.portfolio-item img, .modal-content img {
     background-color: #DDD;
 }
 
@@ -159,11 +159,24 @@ span.disabled {
         width: 290px;
         height: 290px;
     }
+
+    .modal-content img {
+        min-width: 395px;
+        max-width: 638px;
+        height: auto;
+        min-height: 395px;
+        max-height: 638px;
+    }
 }
 @media(min-width:768px) {
     .portfolio-item img {
         width: 290px;
         height: 290px;
+    }
+
+    .modal-content img {
+        width: 638px;
+        height: 638px;
     }
 }
 @media(min-width:992px) {
@@ -171,10 +184,20 @@ span.disabled {
         width: 212.5px;
         height: 212.5px;
     }
+
+    .modal-content img {
+        width: 642px;
+        height: 642px;
+    }
 }
 @media(min-width:1200px) {
     .portfolio-item img {
         width: 262.5px;
         height: 262.5px;
+    }
+
+    .modal-content img {
+        width: 640px;
+        height: 640px;
     }
 }
