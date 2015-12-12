@@ -141,6 +141,12 @@ span.disabled {
     cursor: not-allowed;
     color: #DDD;
 }
+
+.modal-content img {
+    width: 100%;
+    height: auto;
+}
+
 /**
  * home page image background before loading
  */
