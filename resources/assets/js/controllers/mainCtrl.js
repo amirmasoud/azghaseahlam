@@ -32,11 +32,4 @@ angular.module('mainCtrl', [])
 				});
 		}
 	}
-
-	$scope.setActive = function(type) {
-		$scope.about = '';
-		$scope.contact = '';
-
-		$scope[type + 'Active'] = 'active';
-	}
 });

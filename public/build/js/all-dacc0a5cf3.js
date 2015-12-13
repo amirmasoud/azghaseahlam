@@ -2793,13 +2793,6 @@ angular.module('mainCtrl', [])
 				});
 		}
 	}
-
-	$scope.setActive = function(type) {
-		$scope.about = '';
-		$scope.contact = '';
-
-		$scope[type + 'Active'] = 'active';
-	}
 });
 var imageApp = angular.module('imageApp', ['mainCtrl', 'imageService', 'infinite-scroll', 'angular-loading-bar', 'ngRoute'], function($interpolateProvider) {
 	$interpolateProvider.startSymbol('<<');

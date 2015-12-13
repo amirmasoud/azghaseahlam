@@ -8459,6 +8459,10 @@ span.disabled .prev-image:focus {
   height: auto;
 }
 
+.caption-text {
+  margin-top: 7px;
+}
+
 /**
  * home page image background before loading
  */
@@ -8548,6 +8552,38 @@ span.disabled .prev-image:focus {
 .col-md-12,
 .col-lg-12 {
   float: right;
+}
+
+/**
+ * Single page
+ */
+
+.page {
+  background: rgba(255, 255, 255, .95);
+  padding: 50px 15px;
+  margin-top: -20px;
+  border-radius: 0 0 4px 4px;
+  border-bottom: 1px solid #F7F7F7;
+  border-right: 1px solid #F7F7F7;
+  border-left: 1px solid #F7F7F7;
+}
+
+.radio label,
+.checkbox label {
+  padding-left: 0;
+  padding-right: 20px;
+}
+
+.radio input[type="radio"],
+.radio-inline input[type="radio"],
+.checkbox input[type="checkbox"],
+.checkbox-inline input[type="checkbox"] {
+  margin-right: -20px !important;
+  margin-left: 0 !important;
+}
+
+.glyphicon {
+  top: 11px;
 }
 #loading-bar,
 #loading-bar-spinner {

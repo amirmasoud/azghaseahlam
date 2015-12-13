@@ -35,8 +35,7 @@
             </div>
             <div class="collapse navbar-collapse" id="main-navbar-collapse">
               <ul class="nav navbar-nav">
-                <li ng-click="setActive('about')" ng-class="aboutActive"><a href="#/about">درباره</a></li>
-                <li ng-click="setActive('contact')" ng-class="contactActive"><a href="#/contact">تماس</a></li>
+                <li><a href="#/about">درباره</a></li>
               </ul>
             </div>
             <!-- /.navbar-collapse -->
