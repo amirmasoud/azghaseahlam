@@ -8333,6 +8333,10 @@ nav.navbar {
   margin: 0 auto 30px auto;
 }
 
+.portfolio-item>span {
+  cursor: pointer;
+}
+
 /**
  * center block on sm to md screens
  */

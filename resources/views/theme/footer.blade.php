@@ -1,5 +1,3 @@
-        <hr>
-
         <!-- Footer -->
         <footer>
             <div class="row text-center">

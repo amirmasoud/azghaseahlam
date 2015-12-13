@@ -8,13 +8,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>
-    @if (Route::is('home'))
-        AzghaseAhlam - Welcome
-    @else
-        @yield('title') - AzghseAhlam
-    @endif
-    </title>
+    <title>اضغاث احلام</title>
 
     <link rel="stylesheet" href="{{ elixir('css/all.css') }}">
 
@@ -30,7 +24,7 @@
     <!-- Navigation -->
     <nav class="navbar navbar-fixed-top" role="navigation">
         <div class="container">
-            <a class="navbar-brand navbar-right pull-right" href="">اضغاث احلام</a>
+            <a class="navbar-brand navbar-right pull-right" href="#/">اضغاث احلام</a>
             <div class="navbar-header">
                 <button type="button" class="navbar-toggle pull-left" data-toggle="collapse" data-target="#main-navbar-collapse">
                     <span class="sr-only">Toggle navigation</span>
@@ -41,8 +35,8 @@
             </div>
             <div class="collapse navbar-collapse" id="main-navbar-collapse">
               <ul class="nav navbar-nav">
-                <li class="active"><a href="">درباره</a></li>
-                <li><a href="">تماس</a></li>
+                <li ng-click="setActive('about')" ng-class="aboutActive"><a href="#/about">درباره</a></li>
+                <li ng-click="setActive('contact')" ng-class="contactActive"><a href="#/contact">تماس</a></li>
               </ul>
             </div>
             <!-- /.navbar-collapse -->
