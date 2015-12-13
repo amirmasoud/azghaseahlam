@@ -13,7 +13,8 @@ class Image implements ImageContract
      */
     public function get()
     {
-        $images = ImageModel::select('id', 'standard_resolution', 'low_resolution', 'caption_text', 'link')
+        $images = ImageModel::select('id', 'low_resolution')
+                            ->where('state', '=', 'show')
                             ->orderBy('created_time', 'desc')
                             ->simplePaginate(24);
 
