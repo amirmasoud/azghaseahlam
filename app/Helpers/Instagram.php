@@ -15,20 +15,20 @@ class Instagram implements InstagramContract
      * @param  integer  $userId user id of target user or empty fot current user media
      * @return string
      */
-    public function userRecentMediaURL($profile_id = 'self')
+    public function userRecentMediaURL($profileId = 'self')
     {
         $recentMedia = '/media/recent/?access_token=';
 
-        return config('instagram.url') . $profile_id . $recentMedia . config('instagram.access_token');
+        return config('instagram.url') . $profileId . $recentMedia . config('instagram.access_token');
     }
 
     /**
      * Store images of a instagram profile for the first time.
      * @param  string  $url recent instagram url
-     * @param  integer  $profile_id instagram profile id of the owner
+     * @param  integer  $profileId instagram profile id of the owner
      * @return  string   command line message
      */
-    public function store($url, $profile_id)
+    public function store($url, $profileId)
     {
         // Get associative arrays.
         $response = json_decode(file_get_contents($url), true);
@@ -57,7 +57,7 @@ class Instagram implements InstagramContract
             
             $image['updated_at']            = $now;
             $image['created_at']            = $now;
-            $image['profile_id']            = $profile_id;
+            $image['profile_id']            = $profileId;
             $image['image_id']              = $resData['id'];
             $image['link']                  = $resData['link'];
             $image['caption_text']          = $resData['caption']['text'];
@@ -77,29 +77,30 @@ class Instagram implements InstagramContract
          * there is no other next_url in pagination array.
          */
         if (array_key_exists('next_url', $response['pagination']))
-            $this->store($response['pagination']['next_url'], $profile_id);
+            $this->store($response['pagination']['next_url'], $profileId);
 
         // Count of inserted images.
-        $imagesCount = Image::where('profile_id', '=', $profile_id)->count('image_id');
+        $imagesCount = Image::where('profile_id', '=', $profileId)->count('image_id');
 
-        return PHP_EOL . $imagesCount . ' image(s) inserted for ' . $profile_id . PHP_EOL;
+        return PHP_EOL . $imagesCount . ' image(s) inserted for ' . $profileId . PHP_EOL;
     }
 
     /**
      * Update images of a created Instagram profile.
      * @param  string  $url recent Instagram url
-     * @param  integer  $profile_id instagram profile id of the owner
+     * @param  integer  $profileId instagram profile id of the owner
      * @return string  command line message
      */
-    public function update($url, $profile_id)
-    {
-        // Get last fetched image's id
+    public function update($url, $profileId)
+    {     
+        // Get last fetched image's id by each profile
         $last_image_id = Image::orderBy('created_time', 'desc')
-                                ->firstOrFail()
+                                ->where('profile_id', '=', $profileId)
+                                ->firstOrFail(['image_id'])
                                 ->image_id;
 
         // Count of current images for given profile id before update.
-        $imagesCountBeforeUpadate = Image::where('profile_id', '=', $profile_id)->count('image_id');
+        $imagesCountBeforeUpadate = Image::where('profile_id', '=', $profileId)->count('image_id');
 
         // when last image id met, updating state will change to false
         $updating = true;
@@ -138,7 +139,7 @@ class Instagram implements InstagramContract
             
             $image['updated_at']            = $now;
             $image['created_at']            = $now;
-            $image['profile_id']            = $profile_id;
+            $image['profile_id']            = $profileId;
             $image['image_id']              = $resData['id'];
             $image['link']                  = $resData['link'];
             $image['caption_text']          = $resData['caption']['text'];
@@ -162,11 +163,14 @@ class Instagram implements InstagramContract
             $this->create($response['pagination']['next_url']);
 
         // Count of current images for given profile id after updating.
-        $imagesCountAfterUpdate = Image::where('profile_id', '=', $profile_id)->count('image_id');
+        $imagesCountAfterUpdate = Image::where('profile_id', '=', $profileId)->count('image_id');
 
         // number of inserted images after update.
         $imagesCount = $imagesCountAfterUpdate - $imagesCountBeforeUpadate;
 
-        return PHP_EOL . $imagesCount . ' image(s) inserted for ' . $profile_id . PHP_EOL;
+        // Profile name
+        $profileName = InstagramProfile::whereProfileId($profileId)->firstOrFail()->name;
+
+        return [$profileId, $imagesCount, $profileName];
     }
 }

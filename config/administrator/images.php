@@ -1,8 +1,5 @@
 <?php
 
-/**
- * Actors model config
- */
 return array(
 	'title'  => 'Images',
 	'single' => 'Image',
@@ -12,18 +9,6 @@ return array(
 	 * The display columns
 	 */
 	'columns' => array(
-		'link' => array(
-			'title' => 'Link',
-		),
-		'low_resolution' => array(
-			'title' => 'Low Resolution',
-		),
-		'standard_resolution' => array(
-			'title' => 'Standard Resolution',
-		),
-		'caption_text' => array(
-			'title' 		=> 'Caption Text',
-		),
 		'thumbnail' => array(
 			'title' 	=> 'Thumbnail',
 			'output' 	=> function($thumbnail) {
@@ -32,12 +17,20 @@ return array(
 				},
 			'sortable' => false,
 		),
-		'created_at' => array(
-			'title' 		=> 'Created at',
+		'caption_text' => array(
+			'title' => 'Caption Text',
 		),
-		'updated_at' => array(
-			'title' 		=> 'Updated at',
-		)
+		'state' => array(
+			'title' => 'State'
+		),
+		'owner' => array(
+			'title' 		=> 'Owner',
+			'relationship' 	=> 'instagramProfile',
+			'select' 		=> "(:table).name",
+		),
+		'created_time' => array(
+			'title' 		=> 'Created time',
+		),
 	),
 
 	/**
@@ -45,6 +38,24 @@ return array(
 	 */
 	'edit_fields' => array(
 		'id',
+		'caption_text' => array(
+		    'title' => 'Caption Text',
+		    'type' 	=> 'wysiwyg',
+		),
+		'state' => array(
+		    'type' => 'enum',
+		    'title' => 'State',
+		    'options' => array(
+		        'new' 	=> 'New',
+		        'hide' 	=> 'Hide',
+		        'show' 	=> 'Show',
+		    ),
+		),
+/*		'instagramProfile' => array(
+			'type' 		 => 'relationship',
+			'title' 	 => 'Owner',
+			'name_field' => 'name',
+		),*/
 		'link' => array(
 			'title' => 'Title',
 			'type' 	=> 'text',
@@ -65,10 +76,10 @@ return array(
 			'type' 	=> 'text',
 			'limit' => 255,
 		),
-		'caption_text' => array(
-		    'title' => 'Caption Text',
-		    'type' 	=> 'wysiwyg',
-		)
+		'created_time' => array(
+			'title' => 'Created time',
+			'type'  => 'datetime',
+		),
 	),
 
 	/**
@@ -76,32 +87,28 @@ return array(
 	 *
 	 * @type array
 	 */
-/*	'filters' => array(
-	    'title' => array(
-	        'title' => 'Name',
+	'filters' => array(
+	    'caption_text' => array(
+	        'title' => 'Caption Text',
 	    ),
-	    'subtitle' => array(
-	        'title' => 'Subtitle',
-	        'type' 	=> 'text',
+	    'state' => array(
+	        'title' => 'State',
+	        'type' 	=> 'enum',
+		    'options' => array(
+		        'new' 	=> 'New',
+		        'hide' 	=> 'Hide',
+		        'show' 	=> 'Show',
+		    ),
 	    ),
-	    'user' => array(
-	        'title' 	 => 'Author',
-	        'type' 		 => 'relationship',
-	        'name_field' => 'name',
+/*		'instagramProfile' => array(
+			'title' 	 => 'Owner',
+			'type' 		 => 'relationship',
+			'name_field' => 'name',
+		),*/
+	    'created_time' => array(
+	        'title' 	 => 'Created Time',
+	        'type' 		 => 'datetime',
 	    ),
-	    'body' => array(
-	        'title' => 'Body',
-	        'type' 	=> 'text',
-	    ),
-	    'created_at' => array(
-	    	'title' => 'Created at',
-	    	'type'	=> 'date',
-	    ),
-	    'updated_at' => array(
-	    	'title' => 'Updated at',
-	    	'type'	=> 'date',
-	    )
-	),*/
-
+	),
 	'form_width' => 600
 );

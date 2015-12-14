@@ -4,6 +4,7 @@ angular.module('mainCtrl', [])
     $scope.loading = true;
     $scope.images = [];
     $scope.singular = [];
+    $scope.loadinImage = false;
     var page = 1;
 
     function getImages() {
@@ -21,8 +22,12 @@ angular.module('mainCtrl', [])
 
 	$scope.openImage = function(id) {
 		if (id) {
+				$scope.loadinImage = true;
+				$scope.singular.standard_resolution = '#';
+				$scope.singular.caption_text = '';
 			return Image.singular(id)
 				.then(function(result) {
+					$scope.loadinImage = false;
 					$scope.singular = result['data'];
 				});
 		}

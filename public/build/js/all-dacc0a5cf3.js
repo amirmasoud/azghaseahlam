@@ -2765,6 +2765,7 @@ angular.module('mainCtrl', [])
     $scope.loading = true;
     $scope.images = [];
     $scope.singular = [];
+    $scope.loadinImage = false;
     var page = 1;
 
     function getImages() {
@@ -2782,20 +2783,33 @@ angular.module('mainCtrl', [])
 
 	$scope.openImage = function(id) {
 		if (id) {
+				$scope.loadinImage = true;
+				$scope.singular.standard_resolution = '#';
+				$scope.singular.caption_text = '';
 			return Image.singular(id)
 				.then(function(result) {
+					$scope.loadinImage = false;
 					$scope.singular = result['data'];
 				});
 		}
 	}
 });
-var imageApp = angular.module('imageApp', ['mainCtrl', 'imageService', 'infinite-scroll', 'angular-loading-bar'], function($interpolateProvider) {
+var imageApp = angular.module('imageApp', ['mainCtrl', 'imageService', 'infinite-scroll', 'angular-loading-bar', 'ngRoute'], function($interpolateProvider) {
 	$interpolateProvider.startSymbol('<<');
 	$interpolateProvider.endSymbol('>>');
 })
 .config(['cfpLoadingBarProvider', function(cfpLoadingBarProvider) {
 	cfpLoadingBarProvider.includeSpinner = false;
-}]);
+}])
+.config(function($routeProvider, $locationProvider) {
+	$routeProvider
+		.when('/', {
+			templateUrl: 'partials/index.html'
+		})
+		.when('/about', {
+			templateUrl: 'partials/about.html'
+		})
+});
 
 //angular.module('infinite-scroll').value('THROTTLE_MILLISECONDS', 250);
 

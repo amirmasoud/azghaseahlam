@@ -10,9 +10,9 @@ use App\Helpers\Contracts\ImageContract;
 
 class ImagesController extends Controller
 {
-    public function get(ImageContract $images)
+    public function all(ImageContract $images)
     {
-    	return $images->get();
+    	return $images->all();
     }
 
     public function singular(ImageContract $image, $id)

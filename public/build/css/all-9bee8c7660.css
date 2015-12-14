@@ -8333,6 +8333,10 @@ nav.navbar {
   margin: 0 auto 30px auto;
 }
 
+.portfolio-item>span {
+  cursor: pointer;
+}
+
 /**
  * center block on sm to md screens
  */
@@ -8441,9 +8445,145 @@ footer {
   color: #3FB9FF;
 }
 
-span.disabled {
+span.disabled,
+span.disabled .next-image:hover,
+span.disabled .prev-image:hover,
+span.disabled .next-image:focus,
+span.disabled .prev-image:focus {
   cursor: not-allowed;
-  color: #DDD;
+  color: #DDD !important;
+}
+
+.modal-content img {
+  width: 100%;
+  height: auto;
+}
+
+.caption-text {
+  margin-top: 7px;
+}
+
+/**
+ * home page image background before loading
+ */
+
+.portfolio-item img,
+.modal-content img {
+  background-color: #DDD;
+}
+
+@media (max-width:767px) {
+  .portfolio-item img {
+    width: 290px;
+    height: 290px;
+  }
+
+  .modal-content img {
+    min-width: 395px;
+    max-width: 638px;
+    height: auto;
+    min-height: 395px;
+    max-height: 638px;
+  }
+}
+
+@media (min-width:768px) {
+  .portfolio-item img {
+    width: 290px;
+    height: 290px;
+  }
+
+  .modal-content img {
+    width: 638px;
+    height: 638px;
+  }
+}
+
+@media (min-width:992px) {
+  .portfolio-item img {
+    width: 212.5px;
+    height: 212.5px;
+  }
+
+  .modal-content img {
+    width: 642px;
+    height: 642px;
+  }
+}
+
+@media (min-width:1200px) {
+  .portfolio-item img {
+    width: 262.5px;
+    height: 262.5px;
+  }
+
+  .modal-content img {
+    width: 640px;
+    height: 640px;
+  }
+}
+
+/**
+ * make grids to start from right
+ */
+
+.col-md-1,
+.col-lg-1,
+.col-md-2,
+.col-lg-2,
+.col-md-3,
+.col-lg-3,
+.col-md-4,
+.col-lg-4,
+.col-md-5,
+.col-lg-5,
+.col-md-6,
+.col-lg-6,
+.col-md-7,
+.col-lg-7,
+.col-md-8,
+.col-lg-8,
+.col-md-9,
+.col-lg-9,
+.col-md-10,
+.col-lg-10,
+.col-md-11,
+.col-lg-11,
+.col-md-12,
+.col-lg-12 {
+  float: right;
+}
+
+/**
+ * Single page
+ */
+
+.page {
+  background: rgba(255, 255, 255, .95);
+  padding: 50px 15px;
+  margin-top: -20px;
+  border-radius: 0 0 4px 4px;
+  border-bottom: 1px solid #F7F7F7;
+  border-right: 1px solid #F7F7F7;
+  border-left: 1px solid #F7F7F7;
+}
+
+.radio label,
+.checkbox label {
+  padding-left: 0;
+  padding-right: 20px;
+}
+
+.radio input[type="radio"],
+.radio-inline input[type="radio"],
+.checkbox input[type="checkbox"],
+.checkbox-inline input[type="checkbox"] {
+  margin-right: -20px !important;
+  margin-left: 0 !important;
+}
+
+.glyphicon {
+  top: 11px;
 }
 #loading-bar,
 #loading-bar-spinner {

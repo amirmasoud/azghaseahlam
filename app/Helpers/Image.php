@@ -9,33 +9,38 @@ class Image implements ImageContract
 {
     /**
      * Get all images
+     *
+     * @param  string  $state image state, show|hide|new, default show
      * @return JSON
      */
-    public function get()
+    public function all($state = 'show')
     {
-        $images = ImageModel::select('id', 'standard_resolution', 'low_resolution', 'caption_text', 'link')
-                            ->orderBy('created_time', 'desc')
+        $images = ImageModel::select('id', 'low_resolution')
+                            ->whereStateOrderByCreatedTime($state)
                             ->simplePaginate(24);
 
         return $images;
     }
 
     /**
-     * Get an image based on id
+     * Get an image based on id.
+     * 
      * @param  integer  $id image id
+     * @param  string  $state image state, show|hide|new, default show
      * @return JSON
      */
-    public function singular($id)
+    public function singular($id, $state = 'show')
     {
-        $image = ImageModel::select('id', 'standard_resolution', 'low_resolution', 'caption_text', 'link')
+        $image = ImageModel::select('standard_resolution', 'caption_text', 'created_time')
                             ->where('id', '=', $id)
+                            ->whereStateOrderByCreatedTime($state)
                             ->firstOrFail();
 
         // Get next/prev id
-        $nextId = ImageModel::NextId($image->id);
-        $prevId = ImageModel::prevId($image->id);
-        $image->next = is_int( $nextId ) ? $nextId : 0;
-        $image->prev = is_int( $prevId ) ? $prevId : 0;
+        $nextId = ImageModel::NextId($image->created_time, $state);
+        $prevId = ImageModel::prevId($image->created_time, $state);
+        $image->next = empty( $nextId->id ) ? 0 : $nextId->id;
+        $image->prev = empty( $prevId->id ) ? 0 : $prevId->id;
 
         return $image;
     }

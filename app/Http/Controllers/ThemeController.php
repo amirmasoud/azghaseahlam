@@ -21,22 +21,4 @@ class ThemeController extends Controller
 
         return view('theme.4-cols-portfolio', compact('images'));
     }
-
-    /**
-     * Get about page
-     * @return  view
-     */
-    public function about()
-    {
-        return 'new page';
-    }
-
-    /**
-     * Get contact page
-     * @return  view
-     */
-    public function contact()
-    {
-        return 'new page';
-    }
 }
