@@ -52,7 +52,7 @@ return array(
 		    ),
 		),
 		'link' => array(
-			'title' => 'Title',
+			'title' => 'Link',
 			'type' 	=> 'text',
 			'limit' => 255,
 		),
