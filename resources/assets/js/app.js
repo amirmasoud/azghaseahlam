@@ -1,4 +1,4 @@
-var imageApp = angular.module('imageApp', ['mainCtrl', 'imageService', 'infinite-scroll', 'angular-loading-bar', 'ngRoute'], function($interpolateProvider) {
+var imageApp = angular.module('imageApp', ['mainCtrl', 'imageService', 'infinite-scroll', 'angular-loading-bar', 'ngRoute', 'ngSanitize'], function($interpolateProvider) {
 	$interpolateProvider.startSymbol('<<');
 	$interpolateProvider.endSymbol('>>');
 })
@@ -15,4 +15,5 @@ var imageApp = angular.module('imageApp', ['mainCtrl', 'imageService', 'infinite
 		})
 });
 
+imageApp.filter('unsafe', function($sce) { return $sce.trustAsHtml; });
 //angular.module('infinite-scroll').value('THROTTLE_MILLISECONDS', 250);

@@ -22,7 +22,7 @@
                                 </div>
                             </span>
                             <div class="col-xs-10">
-                                <p class="caption-text"><< singular.caption_text >></p>
+                                <p class="caption-text" ng-bind-html="singular.caption_text | unsafe"></p>
                             </div>
                             <span class="next-image" ng-class="{disabled: !singular.next}" ng-click="openImage(singular.next)">
                                 <div class="col-xs-1">

@@ -26,6 +26,7 @@ elixir(function(mix) {
         'ng-loading-bar.min.js',
         'ng-route.min.js',
         'ng-infinite-scroll.min.js',
+        'ng-sanitize.min.js',
         'services/imageService.js',
         'controllers/mainCtrl.js',
         'app.js',

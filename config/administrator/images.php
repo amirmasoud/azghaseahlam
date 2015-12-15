@@ -9,8 +9,8 @@ return array(
 	 * The display columns
 	 */
 	'columns' => array(
-		'thumbnail' => array(
-			'title' 	=> 'Thumbnail',
+		'standard_resolution' => array(
+			'title' 	=> 'Standard Resolution',
 			'output' 	=> function($thumbnail) {
 				if ($thumbnail != '')
 					return '<img src="' . $thumbnail . '" alt="no thumbnail" />';
@@ -51,34 +51,10 @@ return array(
 		        'show' 	=> 'Show',
 		    ),
 		),
-/*		'instagramProfile' => array(
-			'type' 		 => 'relationship',
-			'title' 	 => 'Owner',
-			'name_field' => 'name',
-		),*/
 		'link' => array(
 			'title' => 'Title',
 			'type' 	=> 'text',
 			'limit' => 255,
-		),
-		'low_resolution' => array(
-			'title' => 'Low Resolution',
-			'type' 	=> 'text',
-			'limit' => 255,
-		),
-		'standard_resolution' => array(
-			'title' => 'Standard Resolution',
-			'type' 	=> 'text',
-			'limit' => 255,
-		),
-		'thumbnail' => array(
-			'title' => 'Thumbnail',
-			'type' 	=> 'text',
-			'limit' => 255,
-		),
-		'created_time' => array(
-			'title' => 'Created time',
-			'type'  => 'datetime',
 		),
 	),
 
@@ -100,11 +76,6 @@ return array(
 		        'show' 	=> 'Show',
 		    ),
 	    ),
-/*		'instagramProfile' => array(
-			'title' 	 => 'Owner',
-			'type' 		 => 'relationship',
-			'name_field' => 'name',
-		),*/
 	    'created_time' => array(
 	        'title' 	 => 'Created Time',
 	        'type' 		 => 'datetime',
