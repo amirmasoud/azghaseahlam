@@ -8359,6 +8359,10 @@ nav.navbar {
   margin-top: 69px;
 }
 
+.modal-footer {
+  min-height: 66px;
+}
+
 @media (min-width: 992px) {
   .modal-custom .modal-content {
     width: 642px;
@@ -8584,6 +8588,35 @@ span.disabled .prev-image:focus {
 
 .glyphicon {
   top: 11px;
+}
+
+.glyphicon-spin {
+  -webkit-animation: spin 1000ms infinite linear;
+  animation: spin 1000ms infinite linear;
+}
+
+@-webkit-keyframes spin {
+  0% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+
+  100% {
+    -webkit-transform: rotate(359deg);
+    transform: rotate(359deg);
+  }
+}
+
+@keyframes spin {
+  0% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+
+  100% {
+    -webkit-transform: rotate(359deg);
+    transform: rotate(359deg);
+  }
 }
 #loading-bar,
 #loading-bar-spinner {

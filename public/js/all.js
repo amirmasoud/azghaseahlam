@@ -2779,33 +2779,38 @@ angular.module('imageService', [])
 angular.module('mainCtrl', [])
 
 .controller('mainController', function($scope, $http, Image) {
-    $scope.loading = true;
     $scope.images = [];
     $scope.singular = [];
-    $scope.loadinImage = false;
+    $scope.loadingImageNext = false;
+    $scope.loadingImagePrev = false;
+    var busy = false;
     var page = 1;
 
     function getImages() {
+		if (busy) return;
+			busy = true;
+
     	return Image.get(page)
 	        .then(function(result) {
 	        	page = page + 1;
 	            $scope.images = $scope.images.concat(result['data']['data']);
-	            $scope.loading = false;
+				busy = false;
 	        });
     }
 
 	$scope.loadMore = function() {
+
 		return getImages();
 	};
 
-	$scope.openImage = function(id) {
+	$scope.openImage = function(id, direction) {
 		if (id) {
-				$scope.loadinImage = true;
+				$scope['loadingImage' + direction] = true;
 				$scope.singular.standard_resolution = '#';
 				$scope.singular.caption_text = '';
 			return Image.singular(id)
 				.then(function(result) {
-					$scope.loadinImage = false;
+					$scope['loadingImage' + direction] = false;
 					$scope.singular = result['data'];
 				});
 		}
@@ -2829,6 +2834,7 @@ var imageApp = angular.module('imageApp', ['mainCtrl', 'imageService', 'infinite
 });
 
 imageApp.filter('unsafe', function($sce) { return $sce.trustAsHtml; });
-//angular.module('infinite-scroll').value('THROTTLE_MILLISECONDS', 250);
+
+angular.module('infinite-scroll').value('THROTTLE_MILLISECONDS', 250);
 
 //# sourceMappingURL=all.js.map
