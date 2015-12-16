@@ -36,12 +36,14 @@ class Image extends Model
     /**
      * Scope a query to get next image id.
      *
+     * @param  collection $query
+     * @param  datetime $createdTime
      * @param  string  $state image state, show|hide|new, default show
      * @return \Illuminate\Database\Eloquent\Builder
      */
-	public function scopeNextId($query, $created_time, $state)
+	public function scopeNextId($query, $createdTime, $state)
 	{
-		return $query->where('created_time', '>', $created_time)
+		return $query->where('created_time', '>', $createdTime)
 					 ->WhereStateOrderByCreatedTime($state)
 					 ->first(['id']);
 	}
@@ -49,19 +51,22 @@ class Image extends Model
     /**
      * Scope a query to get prev image id.
      *
+     * @param  collection $query
+     * @param  datetime $createdTime
      * @param  string  $state image state, show|hide|new, default show
      * @return \Illuminate\Database\Eloquent\Builder
      */
-	public function scopePrevId($query, $created_time, $state)
+	public function scopePrevId($query, $createdTime, $state)
 	{
-		return $query->where('created_time', '<', $created_time)
+		return $query->where('created_time', '<', $createdTime)
 					 ->WhereStateOrderByCreatedTime($state)
 					 ->first(['id']);
 	}
 
     /**
      * Scope a query to get by state and order.
-     *
+     * 
+     * @param  collection $query
      * @param  string  $state image state, show|hide|new, default show
      * @return \Illuminate\Database\Eloquent\Builder
      */

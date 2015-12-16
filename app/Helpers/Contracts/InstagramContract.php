@@ -4,13 +4,6 @@ namespace App\Helpers\Contracts;
 
 Interface InstagramContract
 {
-	/**
-	 * Generate recent media by a user url
-	 * @param  integer  $userId user id of target user or empty fot current user media
-	 * @return string
-	 */
-	public function userRecentMediaURL($userId = 'self');
-
     /**
      * Store images of a instagram profile for the first time.
      * @param  string  $url recent instagram url

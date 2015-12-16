@@ -2788,7 +2788,7 @@ angular.module('mainCtrl', [])
     function getImages() {
     	return Image.get(page)
 	        .then(function(result) {
-	        	page = parseInt(result['data']['current_page'], 10) + 1;
+	        	page = page + 1;
 	            $scope.images = $scope.images.concat(result['data']['data']);
 	            $scope.loading = false;
 	        });

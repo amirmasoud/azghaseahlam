@@ -60,7 +60,8 @@ return array(
 	 */
 	'menu' => array(
 				'images',
-				'instagramProfiles'
+				'instagramProfiles',
+				'Users' => array('users', 'resetPassword'),
 			),
 
 	/**

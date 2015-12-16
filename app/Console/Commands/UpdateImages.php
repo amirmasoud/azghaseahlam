@@ -42,6 +42,7 @@ class UpdateImages extends Command
      * @var  array
      */
     private $headers;
+    private $time_start;
 
     /**
      * Create a new command instance.
@@ -52,6 +53,7 @@ class UpdateImages extends Command
     {
         parent::__construct();
 
+        $this->time_start = microtime(true); 
         $this->headers   = ['Profile ID', 'Image inserted', 'Profile Name'];
         $this->comments  = [];
         $this->instagram = $instagram;
@@ -77,9 +79,12 @@ class UpdateImages extends Command
         } else {
             $this->update($this->argument('profile_id'));
         }
+        $time_end = microtime(true);
+        $execution_time = ($time_end - $this->time_start)/60;
 
         // Print the result in table format
         $this->table($this->headers, $this->comments);
+        $this->comment('Execution Time: ' . $execution_time . ' Mins');
     }
 
     /**
