@@ -43,7 +43,8 @@ trait InstagramLogic {
 
     /**
      * Get last fetched image by profile id.
-     * 
+     *
+     * @param  integer $profileId
      * @return collection
      */
     public function lastFetchedImageId($profileId) 

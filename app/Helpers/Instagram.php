@@ -83,10 +83,12 @@ class Instagram implements InstagramContract
      */
     public function update($url, $profileId)
     {
+        // If profile id is virgin return not found message
         if ($this->virginProfile($profileId)) {
             return [$profileId, 'Not Found', 'Not Found'];
         }
 
+        // Otherwise get the last image id
         $last_image = $this->lastFetchedImageId($profileId);
 
         $this->profileNotFound($last_image, $profileId);
