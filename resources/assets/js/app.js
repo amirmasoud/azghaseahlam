@@ -16,4 +16,5 @@ var imageApp = angular.module('imageApp', ['mainCtrl', 'imageService', 'infinite
 });
 
 imageApp.filter('unsafe', function($sce) { return $sce.trustAsHtml; });
-//angular.module('infinite-scroll').value('THROTTLE_MILLISECONDS', 250);
+
+angular.module('infinite-scroll').value('THROTTLE_MILLISECONDS', 250);
