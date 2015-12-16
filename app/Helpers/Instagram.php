@@ -14,6 +14,7 @@ class Instagram implements InstagramContract
 
     /**
      * Store images of a instagram profile for the first time.
+     * 
      * @param  string  $url recent instagram url
      * @param  integer  $profileId instagram profile id of the owner
      * @return  string   command line message
@@ -77,6 +78,7 @@ class Instagram implements InstagramContract
 
     /**
      * Update images of a created Instagram profile.
+     * 
      * @param  string  $url recent Instagram url
      * @param  integer  $profileId instagram profile id of the owner
      * @return string  command line message
@@ -91,14 +93,18 @@ class Instagram implements InstagramContract
         // Otherwise get the last image id
         $last_image = $this->lastFetchedImageId($profileId);
 
-        $this->profileNotFound($last_image, $profileId);
+        // If profile is empty
+        if ($this->emptyProfile($last_image)) {
+            return [$profileId, 'Empty Profile', 'Empty Profile'];
+        }
 
-        // If last image was not null get the last image id
+        // If last image was not empty get the last image id
         $last_image_id = $last_image->image_id;
 
         // Count of current images for given profile id before update.
         $imagesCountBeforeUpadate = Image::where('profile_id', '=', $profileId)->count('image_id');
 
+        // Recursive function
         $this->updateImages($profileId, $url, $last_image_id);
 
         // Count of current images for given profile id after updating.

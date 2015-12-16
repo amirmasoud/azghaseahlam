@@ -55,17 +55,28 @@ trait InstagramLogic {
     }
 
     /**
-     * If profile id not found
+     * If profile id is empty
      * 
      * @param  collection $last_image
      * @return array
      */
-    public function profileNotFound($last_image, $profileId)
+    public function emptyProfile($last_image)
     {
-        if (is_null($last_image))
-            return [$profileId, 'Not found', 'Not found'];
+        if (is_null($last_image)) {
+            return true;
+        } else {
+            return false;
+        }
     }
 
+    /**
+     * Update process for inserting new images.
+     * 
+     * @param  integer $profileId
+     * @param  string  $url
+     * @param  integer $last_image_id
+     * @return void
+     */
     public function updateImages($profileId, $url, $last_image_id)
     {
         static $updating = true;
