@@ -1,7 +1,6 @@
 @if ( $errors->any() )
 	<div class="alert alert-important alert-warning">
-		<button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
-		<strong>Oh Snap!</strong>
+		<strong>خطایی رخ داده است!</strong>
 		<ul>
 			@foreach ( $errors->all() as $error )
 				<li>{{ $error }}</li>

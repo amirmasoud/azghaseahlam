@@ -24,7 +24,7 @@
     <!-- Navigation -->
     <nav class="navbar navbar-fixed-top" role="navigation">
         <div class="container">
-            <a class="navbar-brand navbar-right pull-right" href="#/">اضغاث احلام</a>
+            <a class="navbar-brand navbar-right pull-right" ng-href="/">اضغاث احلام</a>
             <div class="navbar-header">
                 <button type="button" class="navbar-toggle pull-left" data-toggle="collapse" data-target="#main-navbar-collapse">
                     <span class="sr-only">Toggle navigation</span>
@@ -35,7 +35,7 @@
             </div>
             <div class="collapse navbar-collapse" id="main-navbar-collapse">
               <ul class="nav navbar-nav">
-                <li><a href="#/about">درباره</a></li>
+                <li><a ng-href="/about">درباره</a></li>
               </ul>
             </div>
             <!-- /.navbar-collapse -->

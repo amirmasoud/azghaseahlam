@@ -19,17 +19,19 @@ elixir(function(mix) {
     ]);
 
     mix.scripts([
+        'google-analytics.js',
         'jquery.js',
         'angular.min.js',
         'ng-ui-bootstrap.min.js',
         'ng-route.min.js',
         'ng-hotkeys.min.js',
-        'ng-animate.min.js',
+        //'ng-animate.min.js',
         'ng-sanitize.min.js',
         'ng-loading-bar.min.js',
         'ng-infinite-scroll.min.js',
         'services/imageService.js',
         'controllers/mainCtrl.js',
+        'controllers/modalCtrl.js',
         'app.js',
     ]);
 

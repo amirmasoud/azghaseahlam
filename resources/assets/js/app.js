@@ -1,4 +1,4 @@
-var imageApp = angular.module('imageApp', ['mainCtrl', 'ui.bootstrap', 'imageService', 'infinite-scroll', 'angular-loading-bar', 'ngRoute', 'ngSanitize', 'cfp.hotkeys'], function($interpolateProvider) {
+var imageApp = angular.module('imageApp', ['mainCtrl', 'modalCtrl', 'ui.bootstrap', 'imageService', 'infinite-scroll', 'angular-loading-bar', 'ngRoute', 'ngSanitize', 'cfp.hotkeys'], function($interpolateProvider) {
 	$interpolateProvider.startSymbol('<<');
 	$interpolateProvider.endSymbol('>>');
 })
@@ -12,7 +12,14 @@ var imageApp = angular.module('imageApp', ['mainCtrl', 'ui.bootstrap', 'imageSer
 		})
 		.when('/about', {
 			templateUrl: 'partials/about.html'
-		})
+		});
+
+	if(window.history && window.history.pushState){
+		$locationProvider.html5Mode({
+			enabled: true,
+			requireBase: false
+		});
+	}
 });
 
 imageApp.filter('unsafe', function($sce) { return $sce.trustAsHtml; });
