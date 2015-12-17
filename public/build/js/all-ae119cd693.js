@@ -376,7 +376,7 @@ angular.module('imageService', [])
 });
 angular.module('mainCtrl', [])
 
-.controller('mainController', function($scope, $http, Image, $uibModal, $log) {
+.controller('mainController', function($scope, $http, Image, $uibModal, $log, $location) {
     $scope.images = [];
 
     var busy = false;
@@ -416,10 +416,11 @@ angular.module('mainCtrl', [])
 	};
 })
 
-.controller('modalController', function($scope, Image, hotkeys, $uibModalInstance, singular) {
+angular.module('modalCtrl', [])
+.controller('modalController', function($scope, Image, hotkeys, $uibModalInstance, singular, $location) {
 	$scope.singular = singular;
-    $scope.loadingImageNext = false;
-    $scope.loadingImagePrev = false;
+	$scope.loadingImageNext = false;
+	$scope.loadingImagePrev = false;
 
 	$scope.openImage = function(id, direction) {
 		if (id) {
@@ -450,9 +451,7 @@ angular.module('mainCtrl', [])
 	});
 });
 
-
-
-var imageApp = angular.module('imageApp', ['mainCtrl', 'ui.bootstrap', 'imageService', 'infinite-scroll', 'angular-loading-bar', 'ngRoute', 'ngSanitize', 'cfp.hotkeys'], function($interpolateProvider) {
+var imageApp = angular.module('imageApp', ['mainCtrl', 'modalCtrl', 'ui.bootstrap', 'imageService', 'infinite-scroll', 'angular-loading-bar', 'ngRoute', 'ngSanitize', 'cfp.hotkeys'], function($interpolateProvider) {
 	$interpolateProvider.startSymbol('<<');
 	$interpolateProvider.endSymbol('>>');
 })
@@ -466,7 +465,14 @@ var imageApp = angular.module('imageApp', ['mainCtrl', 'ui.bootstrap', 'imageSer
 		})
 		.when('/about', {
 			templateUrl: 'partials/about.html'
-		})
+		});
+
+	if(window.history && window.history.pushState){
+		$locationProvider.html5Mode({
+			enabled: true,
+			requireBase: false
+		});
+	}
 });
 
 imageApp.filter('unsafe', function($sce) { return $sce.trustAsHtml; });

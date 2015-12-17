@@ -30,6 +30,7 @@ elixir(function(mix) {
         'ng-infinite-scroll.min.js',
         'services/imageService.js',
         'controllers/mainCtrl.js',
+        'controllers/modalCtrl.js',
         'app.js',
     ]);
 
