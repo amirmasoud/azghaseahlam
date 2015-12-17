@@ -483,9 +483,9 @@ angular.module('mainCtrl', [])
 			if (typeof direction !== 'undefined')
 				$scope['loadingImage' + direction] = true;
 
-			$scope.singular.standard_resolution = '#';
 			return Image.singular(id)
 				.then(function(result) {
+					$scope.singular.standard_resolution = '#';
 					$scope.singular = result['data'];
 					$scope['loadingImage' + direction] = false;
 				});
