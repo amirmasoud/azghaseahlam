@@ -1,4 +1,4 @@
-var imageApp = angular.module('imageApp', ['mainCtrl', 'imageService', 'infinite-scroll', 'angular-loading-bar', 'ngRoute', 'ngSanitize'], function($interpolateProvider) {
+var imageApp = angular.module('imageApp', ['mainCtrl', 'ui.bootstrap', 'imageService', 'infinite-scroll', 'angular-loading-bar', 'ngRoute', 'ngSanitize', 'cfp.hotkeys'], function($interpolateProvider) {
 	$interpolateProvider.startSymbol('<<');
 	$interpolateProvider.endSymbol('>>');
 })
