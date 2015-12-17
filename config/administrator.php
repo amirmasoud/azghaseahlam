@@ -62,6 +62,7 @@ return array(
 				'images',
 				'instagramProfiles',
 				'Users' => array('users', 'resetPassword'),
+				'Settings' => array('settings.updateImages'),
 			),
 
 	/**
