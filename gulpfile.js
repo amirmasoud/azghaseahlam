@@ -19,6 +19,7 @@ elixir(function(mix) {
     ]);
 
     mix.scripts([
+        'google-analytics.js',
         'jquery.js',
         'angular.min.js',
         'ng-ui-bootstrap.min.js',
