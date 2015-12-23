@@ -1,7 +1,10 @@
 <div class="row portfolio" infinite-scroll="loadMore()" infinite-scroll-disabled="false">
     <div class="col-md-3 col-sm-6 portfolio-item" ng-repeat="image in images track by $index">
     	<span ng-click="openModal(image.id)">
-            <img class="img-responsive" ng-src="<< image.low_resolution >>" alt="">
+            <img class="img-responsive" ng-src="{{ image.low_resolution }}" alt="">
         </span>
+    </div>
+    <div class="margin-bottom-25">
+    	<button class="btn btn-default center-block" ng-click="loadMore()" ng-disabled="finished">{{ loadMoreBtn }}</button>
     </div>
 </div>

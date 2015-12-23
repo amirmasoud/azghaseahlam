@@ -13,7 +13,6 @@ return array(
 	 */
 	'columns' => array(
 		'name',
-		'username',
 		'email',
 	),
 
@@ -24,11 +23,6 @@ return array(
 		'name' => array(
 			'type' => 'text',
 			'title' => 'Name',
-			'limit' => 255
-		),
-		'username' => array(
-			'type' => 'text',
-			'title' => 'Username',
 			'limit' => 255
 		),
 		'email' => array(
@@ -45,9 +39,6 @@ return array(
 	'filters' => array(
 	    'name' => array(
 	        'title' => 'Name',
-	    ),
-	    'username' => array(
-	        'title' => 'Username'
 	    ),
 	    'email' => array(
 	        'title' => 'Email',
