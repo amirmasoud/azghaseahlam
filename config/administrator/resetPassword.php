@@ -13,7 +13,6 @@ return array(
 	 */
 	'columns' => array(
 		'name',
-		'username',
 		'email',
 	),
 
@@ -36,9 +35,6 @@ return array(
 	'filters' => array(
 	    'name' => array(
 	        'title' => 'Name',
-	    ),
-	    'username' => array(
-	        'title' => 'Username'
 	    ),
 	    'email' => array(
 	        'title' => 'Email',
