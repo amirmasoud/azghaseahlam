@@ -8306,6 +8306,11 @@ body {
   background-size: contain;
 }
 
+.load-more-spin {
+  margin-left: 10px;
+  top: 4px !important;
+}
+
 /**
  * RTL header navigation
  */

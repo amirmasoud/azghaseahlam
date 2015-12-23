@@ -389,7 +389,7 @@ angular.module('mainCtrl', [])
     function getImages() {
 		if (busy) return;
 			busy = true;
-    	$scope.loadMoreBtn = 'در حال آوردن موارد بیشتر...';
+    	$scope.loadMoreBtn = '<span class="load-more-spin glyphicon glyphicon-repeat glyphicon-spin"></span> در حال آوردن موارد بیشتر...';
 
     	return Image.get(page)
 	        .then(function(result) {
