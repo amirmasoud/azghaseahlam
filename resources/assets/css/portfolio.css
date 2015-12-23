@@ -45,18 +45,24 @@ nav.navbar {
 /**
  * center modal
  */
-.modal-custom {
+.modal-custom, .modal-dialog {
     min-width: 397px;
     max-width: 640px;
     margin-right: auto;
     margin-left: auto;
-    margin-top: 15px;
+    margin-top: 50px;
     margin-bottom: 15px;
     max-height: 100%;
 }
 
 .modal-footer {
     min-height: 66px;
+}
+
+@media (min-width: 768px) {
+    .modal-dialog {
+        width: 640px;
+    }       
 }
 
 @media (min-width: 992px) {
@@ -70,10 +76,6 @@ nav.navbar {
 }
 
 @media all and (min-width: 768px) and (max-width: 991px) {
-    .modal-custom .modal-content {
-        margin-right: 10px;
-    }
-
     .portfolio {
         width: 640px;
         margin: 0 auto;
@@ -254,4 +256,30 @@ span.disabled .next-image:focus, span.disabled .prev-image:focus {
  */
 .margin-bottom-25 {
     margin-bottom: 25px;
+}
+
+/**
+ * close modal
+ */
+.close-modal span {
+    position: absolute;
+    top: -35px;
+    right: 15px;
+    cursor: pointer;
+    font-size: 20px;
+
+    -webkit-transition: all ease .3s;
+    -mox-transition: all ease .3s;
+    -o-transition: all ease .3s;
+    transition: all ease .3s;
+}
+
+.close-modal span:hover,
+.close-modal span:focus {
+    color: #337ab7;
+
+    -webkit-transition: all ease .3s;
+    -mox-transition: all ease .3s;
+    -o-transition: all ease .3s;
+    transition: all ease .3s;
 }

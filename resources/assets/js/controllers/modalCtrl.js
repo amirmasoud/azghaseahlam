@@ -18,6 +18,10 @@ angular.module('modalCtrl', [])
 		}
 	}
 
+	$scope.close = function () {
+		$uibModalInstance.dismiss();
+	};
+
 	hotkeys.add({
 		combo: 'right',
 		callback: function() {
