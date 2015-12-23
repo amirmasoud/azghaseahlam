@@ -8579,6 +8579,14 @@ span.disabled .prev-image:focus {
     transform: rotate(359deg);
   }
 }
+
+/**
+ * General
+ */
+
+.margin-bottom-25 {
+  margin-bottom: 25px;
+}
 #loading-bar,
 #loading-bar-spinner {
   pointer-events: none;

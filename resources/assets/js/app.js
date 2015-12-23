@@ -1,7 +1,4 @@
-var imageApp = angular.module('imageApp', ['mainCtrl', 'modalCtrl', 'ui.bootstrap', 'imageService', 'infinite-scroll', 'angular-loading-bar', 'ngRoute', 'ngSanitize', 'cfp.hotkeys'], function($interpolateProvider) {
-	$interpolateProvider.startSymbol('<<');
-	$interpolateProvider.endSymbol('>>');
-})
+var imageApp = angular.module('imageApp', ['mainCtrl', 'modalCtrl', 'ui.bootstrap', 'imageService', 'infinite-scroll', 'angular-loading-bar', 'ngRoute', 'ngSanitize', 'cfp.hotkeys'])
 .config(['cfpLoadingBarProvider', function(cfpLoadingBarProvider) {
 	cfpLoadingBarProvider.includeSpinner = false;
 }])

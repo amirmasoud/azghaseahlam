@@ -248,3 +248,10 @@ span.disabled .next-image:focus, span.disabled .prev-image:focus {
         transform: rotate(359deg);
     }
 }
+
+/**
+ * General
+ */
+.margin-bottom-25 {
+    margin-bottom: 25px;
+}
