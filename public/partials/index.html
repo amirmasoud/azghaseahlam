@@ -3,8 +3,14 @@
     	<span ng-click="openModal(image.id)">
             <img class="img-responsive" ng-src="{{ image.low_resolution }}" alt="">
         </span>
+        <div class="loading-modal" ng-show="loadingModal">
+        	<span class="glyphicon glyphicon-repeat glyphicon-spin"></span>
+        </div>
     </div>
 </div>
 <div class="margin-bottom-25 row">
-	<button class="btn btn-default center-block" ng-click="loadMore()" ng-disabled="finished" ng-bind-html="loadMoreBtn | unsafe"></button>
+	<button class="btn btn-default center-block" 
+			ng-click="loadMore()" 
+			ng-disabled="finished" 
+			ng-bind-html="loadMoreBtn | unsafe"></button>
 </div>

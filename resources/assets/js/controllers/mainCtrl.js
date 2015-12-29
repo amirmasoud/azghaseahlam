@@ -4,6 +4,7 @@ angular.module('mainCtrl', [])
     $scope.images = [];
     $scope.loadMoreBtn = 'بیشتر';
     $scope.finished = false;
+    $scope.loadingModal = false;
 
     var busy = false,
     	page = 1;
@@ -38,6 +39,8 @@ angular.module('mainCtrl', [])
 	}
 
 	$scope.openModal = function (id) {
+		var self = this;
+		self.loadingModal = true;
 		var modalInstance = $uibModal.open({
 			animation: true,
 			templateUrl: 'partials/modal.html',
@@ -47,6 +50,7 @@ angular.module('mainCtrl', [])
 				singular: function () {
 					return Image.singular(id)
 						.then(function(result) {
+							self.loadingModal = false;
 							return result['data'];
 						});
 				}
