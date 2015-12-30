@@ -45,3 +45,5 @@
 
     <!-- Page Content -->
     <div class="container">
+    <script type="text/javascript" src="http://click.sabavision.com/get_camp.php?id=24139&banner_position=left-top"></script> 
+    <script type="text/javascript" src="http://click.sabavision.com/get_camp.php?id=24139&banner_position=left-top"></script>  
