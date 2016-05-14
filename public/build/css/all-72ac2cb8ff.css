@@ -11123,12 +11123,10 @@ a.list-group-item-danger:focus {
  */
 
 body {
-  padding-top: 70px;
-  /* Required padding for .navbar-fixed-top. Remove if using .navbar-static-top. Change if height of navigation changes. */
   direction: rtl;
   min-width: 397px;
   font-family: 'B Yekan', tahoma, Arial;
-  background: url(../img/bg.png) no-repeat no-repeat fixed right 30px #FFF;
+  background: url(../img/bg.png) no-repeat no-repeat fixed right 30px #f1f1f1;
   background-size: contain;
 }
 
@@ -11138,21 +11136,21 @@ body {
 }
 
 /**
- * RTL header navigation
+ * header navigation
  */
 
-.navbar-toggle {
-  margin-left: 15px;
+nav.logo {
+  height: 70px;
+  display: block;
+  margin-bottom: 15px;
+  background: #FFF;
+  padding: 15px;
 }
 
-.navbar-nav {
-  padding: 0;
-}
-
-nav.navbar {
-  background-color: #F7F7F7;
-  border-bottom: 1px solid #DDD;
-  box-shadow: 0 0 25px 1px #BCBCBC;
+.logo-pic {
+  width: 140px;
+  margin: 0 auto;
+  display: block;
 }
 
 /**

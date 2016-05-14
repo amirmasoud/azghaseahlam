@@ -21,29 +21,11 @@
 
 <body>
 
-    <!-- Navigation -->
-    <nav class="navbar navbar-fixed-top" role="navigation">
-        <div class="container">
-            <a class="navbar-brand navbar-right pull-right" ng-href="/">اضغاث احلام</a>
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle pull-left" data-toggle="collapse" data-target="#main-navbar-collapse">
-                    <span class="sr-only">Toggle navigation</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-            </div>
-            <div class="collapse navbar-collapse" id="main-navbar-collapse">
-              <ul class="nav navbar-nav">
-                <li><a ng-href="/about">درباره</a></li>
-              </ul>
-            </div>
-            <!-- /.navbar-collapse -->
-        </div>
-        <!-- /.container -->
-    </nav>
+<nav class="logo">
+    <a class="logo-pic" href="/">
+        {!! HTML::image("img/logo.png", "Brand") !!}
+    </a>
+</nav>
 
-    <!-- Page Content -->
-    <div class="container">
-    <script type="text/javascript" src="http://click.sabavision.com/get_camp.php?id=24139&banner_position=left-top"></script> 
-    <script type="text/javascript" src="http://click.sabavision.com/get_camp.php?id=24139&banner_position=left-top"></script>  
+<!-- Page Content -->
+<div class="container">
