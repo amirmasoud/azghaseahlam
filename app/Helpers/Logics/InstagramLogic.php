@@ -2,6 +2,7 @@
 
 namespace app\Helpers\Logics;
 
+use Storage;
 use App\Image;
 use Carbon\Carbon;
 
@@ -103,6 +104,11 @@ trait InstagramLogic {
                 $updating = false;
                 break;
             }
+
+            // Create unique image name
+            $image_name = round(microtime(true) * 1000);
+            $image_standard_resolution = $image_name . '.jpg';
+            $image_thumbnail = $image_name . 'thumbnail.jpg';
 
             /**
              * To initialize created_at and updated_at in bulk
