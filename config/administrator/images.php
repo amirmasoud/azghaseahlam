@@ -9,7 +9,7 @@ return array(
 	 * The display columns
 	 */
 	'columns' => array(
-		'standard_resolution' => array(
+		'full' => array(
 			'title' 	=> 'Standard Resolution',
 			'output' 	=> function($thumbnail) {
 				if ($thumbnail != '')

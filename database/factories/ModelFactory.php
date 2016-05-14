@@ -24,9 +24,8 @@ $factory->define(App\Image::class, function (Faker\Generator $faker) {
     static $i = 0;
     return [
 		'link' => $faker->url,
-		'low_resolution' => $faker->imageUrl($width = 320, $height = 320),
-		'thumbnail' => $faker->imageUrl($width = 150, $height = 150),
-		'standard_resolution' => $faker->imageUrl($width = 640, $height = 640),
+		'thumb' => $faker->imageUrl($width = 150, $height = 150),
+		'full' => $faker->imageUrl($width = 640, $height = 640),
 		'caption_text' => $faker->realText($maxNbChars = 100),
         'created_time' => $faker->dateTimeBetween($startDate = '-30 years', $endDate = 'now'),
 		'image_id' => $i++,

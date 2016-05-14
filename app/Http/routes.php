@@ -16,10 +16,13 @@ get('/about', ['uses' => 'ThemeController@about', 'as' => 'about']);
 get('/contact', ['uses' => 'ThemeController@contact', 'as' => 'contact']);
 */
 
-
-get('/', function() {   
-    return view('angular');
+get('/', function() {
+	return view('angular');
 });
+get('/about', function() {
+	return view('angular');
+});
+
 
 // Authentication routes...
 Route::get('login', 'Auth\AuthController@getLogin');

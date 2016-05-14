@@ -28,7 +28,7 @@ return [
     |
     */
 
-    'cloud' => 's3',
+    'cloud' => 'dropbox',
 
     /*
     |--------------------------------------------------------------------------
@@ -45,7 +45,7 @@ return [
 
         'local' => [
             'driver' => 'local',
-            'root'   => storage_path('app'),
+            'root'   => public_path('app'),
         ],
 
         'ftp' => [
@@ -78,6 +78,12 @@ return [
             'endpoint'  => 'https://identity.api.rackspacecloud.com/v2.0/',
             'region'    => 'IAD',
             'url_type'  => 'publicURL',
+        ],
+
+        'dropbox' => [
+            'driver'    => 'dropbox',
+            'accessToken'  => 'iUjY5_RHwZAAAAAAAAAAB9B1-QYyZAXhh5gAmsGlsElMrbM40rLRxuf34_-DqBiZ',
+            'clientIdentifier'    => 'o1yhog7vuj3nw99',
         ],
 
     ],

@@ -2,6 +2,7 @@
 
 namespace App;
 
+use Storage;
 use Illuminate\Database\Eloquent\Model;
 
 class Image extends Model
@@ -13,9 +14,8 @@ class Image extends Model
 	 */
 	protected $fillable = [
 		'link',
-		'low_resolution',
-        'thumbnail',
-		'standard_resolution',
+        'thumb',
+		'full',
 		'caption_text',
 		'profile_id',
 		'image_id',
@@ -76,5 +76,15 @@ class Image extends Model
 		return $query->where('state', '=', $state)
 					 ->orderBy('created_time', $order)
 					 ->orderBy('created_at', $order);
+	}
+
+	public function getFullAttribute($value)
+	{
+		return asset('app/' . $value);
+	}
+
+	public function getThumbAttribute($value)
+	{
+		return asset('app/' . $value);
 	}
 }

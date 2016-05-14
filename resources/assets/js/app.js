@@ -9,6 +9,9 @@ var imageApp = angular.module('imageApp', ['mainCtrl', 'modalCtrl', 'ui.bootstra
 		})
 		.when('/about', {
 			templateUrl: 'partials/about.html'
+		})
+		.otherwise({
+			redirectTo: 'partials/404.html'
 		});
 
 	if(window.history && window.history.pushState){

@@ -15,7 +15,7 @@ class Image implements ImageContract
      */
     public function all($state = 'show')
     {
-        $images = ImageModel::select('id', 'low_resolution')
+        $images = ImageModel::select('id', 'thumb')
                             ->whereStateOrderByCreatedTime($state)
                             ->simplePaginate(24);
 
@@ -31,7 +31,7 @@ class Image implements ImageContract
      */
     public function singular($id, $state = 'show')
     {
-        $image = ImageModel::select('standard_resolution', 'caption_text', 'created_time')
+        $image = ImageModel::select('full', 'caption_text', 'created_time')
                             ->where('id', '=', $id)
                             ->whereStateOrderByCreatedTime($state)
                             ->firstOrFail();

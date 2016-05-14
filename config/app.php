@@ -150,7 +150,7 @@ return [
         Illuminate\Html\HtmlServiceProvider::class,
         App\Providers\ImageServiceProvider::class,
         App\Providers\InstagramServiceProvider::class,
-
+        App\Providers\DropboxServiceProvider::class,
     ],
 
     /*

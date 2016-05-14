@@ -119,9 +119,16 @@ trait InstagramLogic {
             $image['image_id']              = $resData['id'];
             $image['link']                  = $resData['link'];
             $image['caption_text']          = $resData['caption']['text'];
-            $image['thumbnail']             = $resData['images']['thumbnail']['url'];
-            $image['low_resolution']        = $resData['images']['low_resolution']['url'];
-            $image['standard_resolution']   = $resData['images']['standard_resolution']['url'];
+            // store thumbnail on cloud
+            Storage::put($image_thumbnail, 
+                        file_get_contents($resData['images']['low_resolution']['url']));
+            $image['thumb']                 = $image_thumbnail;
+
+            // store standard image on cloud
+            Storage::put($image_standard_resolution, 
+                        file_get_contents($resData['images']['standard_resolution']['url']));
+            $image['full'] = $image_standard_resolution;
+            
             $image['created_time']          = Carbon::createFromTimestamp($resData['caption']['created_time']);
 
             // add current image to buck insertion array

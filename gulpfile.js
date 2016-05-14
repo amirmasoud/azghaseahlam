@@ -14,6 +14,7 @@ var elixir = require('laravel-elixir');
 elixir(function(mix) {
     mix.styles([
         'bootstrap.css',
+        'bootflat.css',
         'portfolio.css',
         'loading-bar.min.css'
     ]);
@@ -23,9 +24,11 @@ elixir(function(mix) {
         'jquery.js',
         'angular.min.js',
         'ng-ui-bootstrap.min.js',
+        'icheck.min',
+        'jquery.fs.selecter.min.js',
+        'jquery.fs.stepper.min.js',
         'ng-route.min.js',
         'ng-hotkeys.min.js',
-        //'ng-animate.min.js',
         'ng-sanitize.min.js',
         'ng-loading-bar.min.js',
         'ng-infinite-scroll.min.js',
